@@ -3,21 +3,14 @@ CC := gcc
 CFLAGS := -Wall -g
 
 # Diretórios dos arquivos de origem
-SRC_DIR := SIG-BUILDING/Projeto-programacao/Projeto/src
-PRO_DIR := Projeto-programacao/Projeto
-MAIN_DIR := Projeto-Programacao
-DIR := SIG-BUILDING
-
-SRC_CLIENTES_DIR := $(SRC_DIR)/clientes
-SRC_FUNCIONARIOS_DIR := $(SRC_DIR)/funcionarios
-SRC_PRODUTOS_DIR := $(SRC_DIR)/produto
-SRC_VENDAS_DIR := $(SRC_DIR)/vendas
-SRC_RELATORIO_DIR := $(SRC_DIR)/relatorios
-SRC_INTERFACE := $(PRO_DIR)/interface.c
-SRC_VALIDA := $(PRO_DIR)/valida.c
-MAIN := $(MAIN_DIR)/main.c
-DIR := $()/
-
+SRC_CLIENTES_DIR := Projeto/src/clientes
+SRC_FUNCIONARIOS_DIR := Projeto/src/funcionarios
+SRC_PRODUTOS_DIR := Projeto/src/produto
+SRC_VENDAS_DIR := Projeto/src/vendas
+SRC_RELATORIO_DIR := Projeto/src/relatorios
+SRC_INTERFACE := Projeto/interface.c
+SRC_VALIDA := Projeto/valida.c
+MAIN := main.c
 
 # Coleta todos os arquivos .c de cada pasta
 SRCS := $(wildcard $(SRC_CLIENTES_DIR)/*.c) \
@@ -25,10 +18,10 @@ SRCS := $(wildcard $(SRC_CLIENTES_DIR)/*.c) \
         $(wildcard $(SRC_PRODUTOS_DIR)/*.c) \
         $(wildcard $(SRC_VENDAS_DIR)/*.c) \
         $(wildcard $(SRC_RELATORIO_DIR)/*.c) \
-        $(PRO_DIR_INTERFACE) \
-        $(PRO_DIR_VALIDA) \
-        $(MAIN_DIR) \
- 
+        $(SRC_INTERFACE) \
+        $(SRC_VALIDA) \
+        $(MAIN)
+
 # Arquivos objeto (armazenados no diretório temporário 'obj')
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 
@@ -38,8 +31,8 @@ HDRS := $(wildcard $(SRC_CLIENTES_DIR)/*.h) \
         $(wildcard $(SRC_PRODUTOS_DIR)/*.h) \
         $(wildcard $(SRC_VENDAS_DIR)/*.h) \
         $(wildcard $(SRC_RELATORIO_DIR)/*.h) \
-        $(SRC_DIR)/interface.h \
-        $(SRC_DIR)/valida.h
+        Projeto/interface.h \
+        Projeto/valida.h
 
 # Executável
 TARGET := main
