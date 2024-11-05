@@ -27,10 +27,7 @@
 #include "Projeto/src/relatorios/relatoriop.h"
 #include "Projeto/src/relatorios/relatoriov.h"
 
-//ERROR NA COPILAÇÃO/ NÃO TA CHAMANDO A FUNÇÃO DE TELA PRINCIPAL
-//gcc -o programa Projeto/interface.o main.o (apenas atalho para testes)
-//funções principais
-//programa principal
+
 int main(){
     int op;
     printf("Iniciando o programa...\n");
@@ -49,6 +46,9 @@ int main(){
                     break;
             case 6: tela_info_proj();
                     break;
+            case 0:
+                printf("Saindo...\n");
+                break;
             default: 
                 printf("Opção inválida! Tente novamente.\n");
                 break;
